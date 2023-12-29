@@ -1,0 +1,147 @@
+<!-- 1. Basic Hello World Program using HTML 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+</body>
+</html> -->
+
+
+<!-- 2. Basic Hello World Program using Javascript -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        let heading=document.createElement("h1");
+        heading.innerHTML="HELLO WORLD";
+
+        let root=document.getElementById("root");
+        root.appendChild(heading);
+    </script>
+   
+</body>
+</html> -->
+
+<!-- Anything written inside script tag is treated as JS. -->
+<!-- All these createElement,getElementById,appendChild,document,innerHTML is understood by our project bcz our browser has JS runtime enviroment which executes these JS stuffs -->
+<!-- But browser does not know what is React.
+React is JS library which is used for making complex UI very easily and efficiently -->
+
+<!-- 3. Basic Hello World Program using React -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+     By using these two CDN links we can inject React in our project. Now our project or browser will understand the react code -->
+    <!-- <script>
+        const heading= React.createElement("h1",{id:"heading",xyz:"abc"},"Hello World"); //creating an Element hence core react thing, done by react
+        const root= ReactDOM.createRoot(document.getElementById("root")); //creating root for rendering or manipulating DOM hence done ReactDOM
+        root.render(heading);
+    </script>
+
+</body>
+</html> -->
+<!-- 
+React.createElement creates a React element which is just a JS object.Hence heading is not h1 tag yet.
+Now render func will take heading and convert it into h1 tag which browser understand and put it on the DOM -->
+<!-- CDN stands for content delivery networks. CDN links are website where react library has been hosted and we are pulling react from there in our projects.
+These links contains plain JS code bcz at the end React is just JS files or JS peice of code. -->
+<!-- 1st file is react.development.js which is core of React or core React framework algorithm.
+2nd file is react dom. It is used for modifying DOM.
+Why two files is needed? Why not only one file?
+Ans. React does not work only on browser. It runs on phones like React-Native. Hence 1st file is core react and 2nd file is bridge between react and browser. --> 
+
+<!-- 4. Making nested HTML using React
+<div id="parent">
+    <div id="child">
+        <h1>I am h1 tag</h1>
+        <h2>I am h2 tag</h2>
+    </div>
+</div> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+    const parent=React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"},[React.createElement("h1",{},"I am h1 tag"),React.createElement("h2",{},"I am h2 tag")]));
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    root.render(parent);
+</script>
+</body>
+</html> -->
+
+<!-- 5. Some output questions -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Akshay Saini</h1>
+    </div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+    const parent=React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"},[React.createElement("h1",{},"I am h1 tag"),React.createElement("h2",{},"I am h2 tag")]));
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    root.render(parent);
+</script>
+</body>
+</html> -->
+
+<!-- Ques. Here root contains "Akshay Saini" beforehand. What happens to it after rendering root??
+Ans. Firstly,"Akshay Saini" will be seen on website. Then, after rendering "Akshay Saini" gets replaced by "I am h1 tag" and "I am h2 tag".  -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Yash</h1>
+    <div id="root">
+        <h1>Akshay Saini</h1>
+    </div>
+    <h1>Harshal</h1>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+    const parent=React.createElement("div",{id:"parent"},React.createElement("div",{id:"child"},[React.createElement("h1",{},"I am h1 tag"),React.createElement("h2",{},"I am h2 tag")]));
+    const root=ReactDOM.createRoot(document.getElementById("root"));
+    root.render(parent);
+</script>
+</body>
+</html> -->
+
+<!-- Yash and Harshal will remain at same place after rendering also.Hence it shows that react only works with root and not with Yash and Harshal. Hence React is library and not framework. It can be used in small portion of our app without disturbing anything else -->
